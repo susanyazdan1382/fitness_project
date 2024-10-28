@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>help page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+
+
+
+    <!-- font-link -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Guerrilla&display=swap" rel="stylesheet">
+
+
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+    rel="stylesheet"
+  />
+
+
+  <style>
+   
+     @import url('https://fonts.googleapis.com/css2?family=Original+Surfer&family=Protest+Guerrilla&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      
+     .toggle {
+         position: absolute;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         top: 16px;
+         left: 20px;
+         color: white;
+       }
+       .header {
+         display: none;
+       }
+       .toggle .logo img.sidebar-header {
+         object-fit: contain;
+         width: 140px;
+         margin-left: 10px;
+         display: block;
+       }
+       .toggle .logo {
+         display: flex;
+         gap: 2px;
+       }
+       .toggle .logo img {
+         display: none;
+       }
+   
+       .toggle .close {
+         padding-right: 1rem;
+         display: none;
+       }
+       .sidebar {
+         height: 95vh;
+         width: 200px;
+         position: fixed;
+         display: flex;
+         flex-direction: column;
+         top: 12px;
+         left: 10px;
+         background-color: transparent;
+         backdrop-filter: blur(20px);
+         box-shadow: rgba(177, 26, 121, 0.25) 0px 13px 27px -5px,
+           #ffffff4d 0px 8px 16px -8px;
+         border-radius: 15px;
+         color: white;
+         padding-top: 10px;
+         transition: all 0.3s ease;
+       }
+       .sidebar:hover {
+         box-shadow: none;
+       }
+       .sidebar h3 {
+         font-size: 16px;
+         margin-top: 10px;
+         color: white;
+       }
+   
+       .sidebar a {
+         text-decoration: none;
+         display: flex;
+         align-items: center;
+         color: white;
+         height: 3rem;
+         gap: 1rem;
+         position: relative;
+         margin-left: 2rem;
+         top: 60px;
+         transition: all 0.3s ease;
+       }
+       .sidebar a span {
+         font-size: 1.6rem;
+         transition: all 0.3s ease;
+       }
+       .sidebar a:last-child {
+         position: absolute;
+         top: 90%;
+       }
+       .sidebar a.active {
+         background: purple;
+         width: 95%;
+         margin-left: 0;
+         border-top-right-radius: 50px;
+         border-bottom-right-radius: 50px;
+       }
+   
+       .sidebar a.active::before {
+         content: "";
+         width: 6px;
+         height: 18px;
+         background-color: orchid;
+       }
+       .sidebar a.active span {
+         color: orchid;
+         margin-left: calc(1rem - 3px);
+       }
+       .sidebar a:hover {
+         color: orchid;
+       }
+       .sidebar a:hover h3 {
+         color: orchid;
+       }
+       .sidebar a:hover span {
+         margin-left: 0.6rem;
+       }
+       @media screen and (max-width: 1200px) {
+         .sidebar h3 {
+           display: none;
+         }
+         .toggle .logo img.sidebar-header {
+           display: none;
+         }
+         .toggle {
+           top: 0;
+         }
+         .toggle .logo img {
+           display: inline;
+           object-fit: contain;
+           width: 150px;
+           margin-top: 10px;
+           height: 60px;
+           margin-left: -50px;
+         }
+         .sidebar {
+           width: 85px;
+         }
+         .sidebar a {
+           width: 5.6rem;
+         }
+         .sidebar a:last-child {
+           top: 83%;
+         }
+       }
+       @media screen and (max-width: 786px) {
+         .sidebar {
+           display: none;
+           z-index: 3;
+           width: 250px;
+           top: 0;
+           height: 100vh;
+           box-shadow: 1rem 3rem 4rem rgba(177, 26, 121, 0.25);
+           animation: showMenu 0.4s ease forwards;
+         }
+         @keyframes showMenu {
+           to {
+             left: 0;
+           }
+         }
+         .sidebar h3 {
+           display: flex;
+         }
+         .sidebar a {
+           width: 100%;
+         }
+         .sidebar a:last-child {
+           position: absolute;
+           bottom: 5rem;
+         }
+         .toggle .close {
+           display: inline-block;
+           cursor: pointer;
+         }
+         .toggle {
+           margin-left: 0;
+           margin-top: 18px;
+           gap: 20px;
+         }
+         .toggle .logo img.sidebar-header {
+           display: inline;
+         }
+         .toggle .logo img {
+           display: none;
+         }
+         .header {
+           display: inline;
+           color: white;
+           position: fixed;
+           top: 0;
+           z-index: 3;
+           background-color: transparent;
+           backdrop-filter: blur(20px);
+           width: 100%;
+           margin-left: 0;
+           padding: 12px;
+           border-left: 1px solid rgba(255, 255, 255, 0.2);
+           border-right: 1px solid rgba(255, 255, 255, 0.2);
+           border-radius: 15px;
+         }
+         .menu {
+           display: flex;
+           width: 55vw;
+           justify-content: space-between;
+           align-items: center;
+           margin-top: 15px;
+         }
+         .menu span {
+           font-size: 1.6rem;
+           transition: all 0.3s ease;
+           cursor: pointer;
+         }
+         .menu span:hover {
+           color: orchid;
+         }
+         .menu h1 {
+           color: white;
+         }
+       }
+     </style>
+
+
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 d-md-block ">
+              <div class="header">
+                <div class="menu">
+                  <button class="menu-btn">
+                    <span class="material-icons-sharp"> menu </span>
+                  </button>
+                  <h1>Challenges</h1>
+                </div>
+              </div>
+              <aside>
+                <div class="sidebar">
+                  <div class="toggle">
+                    <div class="logo">
+                      <img src="./images/Logo_-_Moda_Fitness-removebg-preview.png" />
+                      <img class="sidebar-header" src="./images/Logo - Moda Fitness.png" />
+                    </div>
+                    <div class="close" id="close-btn">
+                      <span class="material-icons-sharp"> close </span>
+                    </div>
+                  </div>
+                  <a href="dashbord!!.html">
+                    <span class="material-icons-sharp"> dashboard </span>
+                    <h3>Dashboard</h3>
+                  </a>
+                  <a href="workout1.html">
+                    <span class="material-icons-sharp"> schedule </span>
+                    <h3>Plans</h3>
+                  </a>
+                  <a  href="activity.html">
+                    <span class="material-icons-sharp"> receipt_long </span>
+          
+                    <h3>Activity</h3>
+                  </a>
+                  <a href="challenges.html">
+                    <span class="material-icons-sharp"> fitness_center </span>
+                    <h3>Challenges</h3>
+                  </a>
+                  <a href="progress-tracking.html">
+                    <span class="material-icons-sharp"> insights </span>
+                    <h3>Progress</h3>
+                  </a>
+                  <a href="Recommendations.html"> 
+                    <span class="material-icons-sharp"> recommend </span> 
+                    <h3>Suggestions</h3> 
+                  </a>
+                  <a href="Fitness Tracker2.html">
+                    <span class="material-icons-sharp"> home </span>
+                    <h3>Home</h3>
+                  </a>
+                  <a href="user.html">
+                    <span class="material-icons-sharp"> account_circle </span>
+                    <h3>Profile</h3>
+                  </a>
+                  <a class="active" href="user.html">
+                    <span class="material-icons-sharp"> settings </span>
+                    <h3>Setting</h3>
+                  </a>
+                  <a href="Register.html">
+                    <span class="material-icons-sharp"> logout </span>
+                    <h3>Log out</h3>
+                  </a>
+                </div>
+              </aside>
+  
+          </div>
+
+
+            <!-- Main Content -->
+            <main role="main" class="col-md-9 ms-sm-auto col-lg-10 px-4"> 
+
+               <div class="content mt-4 p-3">
+                <h5 class="h1 text-center  mt-5 p-2">Help</h5>
+                <div class="container ">
+                    <p class=" mt-4 p-4">The best fitness trackers can help you achieve your health goals and improve your overall well-being. 
+                      These Spy Kids-esque wearables can keep tabs on just about every aspect of your health: sleep, recovery, blood oxygen
+                       levels and respiratory rates; some can even track electrical activity of the heart (known as ECG). As a certified perso
+                       nal trainer and weightlifter, I used my expertise to test 14 of the best fitness trackers for this guide. The Garmin Venu
+                        3 won me over as best fitness tracker overall, and I found several others worthy of praise.
+
+
+                        For beginners looking to track their workouts in a seamless and manageable way, I recommend the Fitbit Charge
+                         . If you’re just starting out with a regular exercise program, the last thing you want to do is complicate your
+                          routine by introducing an elaborate fitness tracker. The Charge  is the brand’s latest iteration in its Charge ser
+                          ies. Of the trackers I tested, it was the simplest to use while off
+                        ering a surprising level of versatility and accuracy, given its basic design.
+
+
+                      
+                        While testing, I assessed each tracker for accuracy, comfort, ease of use a
+                        nd customizable options. Since these devices are highly personal, the best fitne
+                        ss tracker for you will depend on your needs, training goals and individual preferences. 
+                        That’s why I included a variety of options—everything from a running-specific tracker to the b
+                        est Apple Watch—so you can find something on this list that works for you. I’ve tested several top pic
+                        ks over the past few months to see how they’ve held up over time.For more on how to make the most of these wearabl
+                        es, conection my guide to how to use a fitness tracker.
+                      
+                      
+                      
+                      </p>
+                    
+               </div>
+
+
+               <div class="text text-light mt-5">
+                <p> <i class="bi bi-telephone-forward"></i>
+                 : 0783736750</p>
+                
+               </div>
+                
+               <div class="text text-light">
+                <p>
+                <i class="bi bi-envelope-arrow-down"></i> : susanyazdan@gmail.com
+                </p>
+              </div>
+
+               <div class="text text-light">
+                <p><i class="bi bi-crosshair"></i> : Afghanistan , Herat</p>
+               </div>
+            </main>
+
+            
+        </div>
+    </div>
+
+
+    <script>
+      const menuBtn = document.querySelector(".menu-btn");
+      const closeBtn = document.querySelector(".close");
+      const sidebar = document.querySelector(".sidebar");
+  
+      // Function to open sidebar
+      menuBtn.addEventListener("click", () => {
+        sidebar.style.display = "block"; // Show the sidebar
+      });
+  
+      // Function to close sidebar
+      closeBtn.addEventListener("click", () => {
+        sidebar.style.display = "none"; // Hide the sidebar
+      });
+    </script>
+</body>
+</html>

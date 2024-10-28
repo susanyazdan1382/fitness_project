@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Chat Page</title>
+    <style>
+
+
+#messages{
+    background-color: #54074a70;
+    width: 300px;
+    color: #c6c6e2;
+    border-radius: 40px;
+   
+    
+}
+
+       
+        .navbar {
+            background-color: transparent;
+            color: white;
+            border: 2px solid  rgba(177, 26, 121, 0.25);
+            box-shadow: 1rem 3rem 4rem rgba(177, 26, 121, 0.25);
+            border-top: transparent;
+            
+             border-right-color: transparent;
+             border-left-color: transparent;
+
+            
+        }
+       
+
+
+
+        .chat-box {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+            background-color:transparent;
+            border: 2px solid  rgba(177, 26, 121, 0.25);
+            box-shadow: 1rem 3rem 4rem rgba(177, 26, 121, 0.25);
+            border-radius: 20px;
+            height: 100vh;
+        }
+
+       
+        .message {
+            margin-bottom: 10px;
+        }
+        .message.sent {
+            text-align: right;
+            
+        }
+        .message.received {
+            text-align: left;
+        }
+        .message p {
+
+            display: inline-block;
+            padding: 10px;
+            border-radius: 30px;
+        }
+        .message.sent p {
+            background-color: #611786;
+            color: white;
+        }
+        .message.received p {
+            background-color: #c6c6e2;
+            color: black;
+        }
+        .input-area {
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+        .input-area input {
+            background-color: transparent;
+            border: 2px solid  rgba(177, 26, 121, 0.25);
+            box-shadow: 1rem 3rem 4rem rgba(177, 26, 121, 0.25);
+            width: 88%;
+            margin-right: 10px;
+            border-radius: 30px;
+        }
+
+        .btns{
+            margin-top: -50px;
+            background:linear-gradient(rgba(214, 41, 151, 0.25), rgba(219, 20, 223, 0.63), rgba(166, 20, 179, 0.423));
+              width: 100px;
+             
+              color: #e9e9ef;
+              border: 2px solid  rgba(177, 26, 121, 0.25);
+            box-shadow: 1rem 3rem 4rem rgba(177, 26, 121, 0.25);
+             border-radius: 30px;
+            padding: 9px;
+        }
+
+
+        .btns:hover{
+            box-shadow: 2px 0 5px rgba(148, 23, 170, 0.8);
+            background-color: rgb(99, 12, 99);
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="chat-box ">
+        <div class="navbar navbar-expand-lg">
+            <div class="container">
+                <img src="./images/admin4.jpg" class="rounded-circle mr-2" alt="User Image" width="50px" height="50px">
+                <span class="navbar-brand">Jonaid Samim</span>
+                <div class="ml-auto">
+                    <button class="btn btn-link text-white" onclick="makeCall()"><i class="fas fa-phone-alt"></i></button>
+                    <button class="btn btn-link text-white" onclick="startVideoCall()"><i class="fas fa-video"></i></button>
+                </div>     
+            </div>       
+        </div>
+
+           
+        <div class="message received mt-5">
+            <p>Hello How can I help you ?</p>
+        </div>
+        <div class="message sent">
+            <p>Hi I need some thing with my account.</p>
+        </div>
+        <div class="message sent">
+            <p>can you help me? 🙏</p>
+        </div>
+        <div class="message received">
+            <p>Sure, happy to help. What seems to be the problem</p>
+        </div>
+
+        <div class="message received">
+            <p>and how can help you?</p>
+        </div>
+
+        <div class="message received">
+            <p>tell me please 😊</p>
+        </div>
+
+
+
+      <div class="input-area mt-4">
+      
+        <div id="messages"></div>
+       
+
+        <input type="text" class="form-control p-4 mt-5" id="messageInput" placeholder="Type your message here...">
+        <button class="btns float-right" id="sendButton">Send</button>
+    
+    </div>
+    
+      </div>
+ 
+</div>
+
+<script>
+    function makeCall() {
+        alert('Initiating voice call...');
+    }
+
+    function startVideoCall() {
+        alert('Initiating video call...');
+    }
+</script>
+
+
+
+<script>
+    const sendButton = document.getElementById('sendButton');
+    const messageInput = document.getElementById('messageInput');
+    const messagesDiv = document.getElementById('messages');
+
+    sendButton.addEventListener('click', () => {
+        const message = messageInput.value;
+        if (message) {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            messagesDiv.appendChild(messageElement);
+            messageInput.value = ''; // Clear input field
+            messagesDiv.scrollTop = messagesDiv.scrollHeight; // Scroll to the bottom
+        } else {
+            alert('Please enter a message!');
+        }
+    });
+</script>
+
+</body>
+</html>

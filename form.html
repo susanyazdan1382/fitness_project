@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>help page</title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+
+
+
+    <!-- font-link -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Guerrilla&display=swap" rel="stylesheet">
+
+
+
+
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+    rel="stylesheet"
+  />
+
+
+  <style>
+   
+     @import url('https://fonts.googleapis.com/css2?family=Original+Surfer&family=Protest+Guerrilla&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      
+     .toggle {
+         position: absolute;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         top: 16px;
+         left: 20px;
+         color: white;
+       }
+       .header {
+         display: none;
+       }
+       .toggle .logo img.sidebar-header {
+         object-fit: contain;
+         width: 140px;
+         margin-left: 10px;
+         display: block;
+       }
+       .toggle .logo {
+         display: flex;
+         gap: 2px;
+       }
+       .toggle .logo img {
+         display: none;
+       }
+   
+       .toggle .close {
+         padding-right: 1rem;
+         display: none;
+       }
+       .sidebar {
+         height: 95vh;
+         width: 200px;
+         position: fixed;
+         display: flex;
+         flex-direction: column;
+         top: 12px;
+         left: 10px;
+         background-color: transparent;
+         backdrop-filter: blur(20px);
+         box-shadow: rgba(177, 26, 121, 0.25) 0px 13px 27px -5px,
+           #ffffff4d 0px 8px 16px -8px;
+         border-radius: 15px;
+         color: white;
+         padding-top: 10px;
+         transition: all 0.3s ease;
+       }
+       .sidebar:hover {
+         box-shadow: none;
+       }
+       .sidebar h3 {
+         font-size: 16px;
+         margin-top: 10px;
+         color: white;
+       }
+   
+       .sidebar a {
+         text-decoration: none;
+         display: flex;
+         align-items: center;
+         color: white;
+         height: 3rem;
+         gap: 1rem;
+         position: relative;
+         margin-left: 2rem;
+         top: 60px;
+         transition: all 0.3s ease;
+       }
+       .sidebar a span {
+         font-size: 1.6rem;
+         transition: all 0.3s ease;
+       }
+       .sidebar a:last-child {
+         position: absolute;
+         top: 90%;
+       }
+       .sidebar a.active {
+         background: purple;
+         width: 95%;
+         margin-left: 0;
+         border-top-right-radius: 50px;
+         border-bottom-right-radius: 50px;
+       }
+   
+       .sidebar a.active::before {
+         content: "";
+         width: 6px;
+         height: 18px;
+         background-color: orchid;
+       }
+       .sidebar a.active span {
+         color: orchid;
+         margin-left: calc(1rem - 3px);
+       }
+       .sidebar a:hover {
+         color: orchid;
+       }
+       .sidebar a:hover h3 {
+         color: orchid;
+       }
+       .sidebar a:hover span {
+         margin-left: 0.6rem;
+       }
+       @media screen and (max-width: 1200px) {
+         .sidebar h3 {
+           display: none;
+         }
+         .toggle .logo img.sidebar-header {
+           display: none;
+         }
+         .toggle {
+           top: 0;
+         }
+         .toggle .logo img {
+           display: inline;
+           object-fit: contain;
+           width: 150px;
+           margin-top: 10px;
+           height: 60px;
+           margin-left: -50px;
+         }
+         .sidebar {
+           width: 85px;
+         }
+         .sidebar a {
+           width: 5.6rem;
+         }
+         .sidebar a:last-child {
+           top: 83%;
+         }
+       }
+       @media screen and (max-width: 786px) {
+         .sidebar {
+           display: none;
+           z-index: 3;
+           width: 250px;
+           top: 0;
+           height: 100vh;
+           box-shadow: 1rem 3rem 4rem rgba(177, 26, 121, 0.25);
+           animation: showMenu 0.4s ease forwards;
+         }
+         @keyframes showMenu {
+           to {
+             left: 0;
+           }
+         }
+         .sidebar h3 {
+           display: flex;
+         }
+         .sidebar a {
+           width: 100%;
+         }
+         .sidebar a:last-child {
+           position: absolute;
+           bottom: 5rem;
+         }
+         .toggle .close {
+           display: inline-block;
+           cursor: pointer;
+         }
+         .toggle {
+           margin-left: 0;
+           margin-top: 18px;
+           gap: 20px;
+         }
+         .toggle .logo img.sidebar-header {
+           display: inline;
+         }
+         .toggle .logo img {
+           display: none;
+         }
+         .header {
+           display: inline;
+           color: white;
+           position: fixed;
+           top: 0;
+           z-index: 3;
+           background-color: transparent;
+           backdrop-filter: blur(20px);
+           width: 100%;
+           margin-left: 0;
+           padding: 12px;
+           border-left: 1px solid rgba(255, 255, 255, 0.2);
+           border-right: 1px solid rgba(255, 255, 255, 0.2);
+           border-radius: 15px;
+         }
+         .menu {
+           display: flex;
+           width: 55vw;
+           justify-content: space-between;
+           align-items: center;
+           margin-top: 15px;
+         }
+         .menu span {
+           font-size: 1.6rem;
+           transition: all 0.3s ease;
+           cursor: pointer;
+         }
+         .menu span:hover {
+           color: orchid;
+         }
+         .menu h1 {
+           color: white;
+         }
+       }
+
+
+
+
+       .form-control{
+            margin-top: 60px;
+            background-color: transparent;
+            box-shadow: 1px 2px 2px rgba(164, 72, 130, 0.25);
+            border-radius: 30px;
+            border: 3px solid  rgba(177, 26, 121, 0.25);
+           
+            padding: 20px;
+            
+            
+        }
+        .bot{
+            padding: 10px;
+            color: white;
+            width: 150px;
+            margin-top: 60px;
+            text-align: center;
+            background-color: transparent;
+            border: 3px solid  rgba(177, 26, 121, 0.25);
+            border-radius: 30px;
+            box-shadow: 2px 0 5px rgba(83, 5, 116, 0.725);
+        } 
+     </style>
+
+
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 d-md-block ">
+              <div class="header">
+                <div class="menu">
+                  <button class="menu-btn">
+                    <span class="material-icons-sharp"> menu </span>
+                  </button>
+                  <h1>Challenges</h1>
+                </div>
+              </div>
+              <aside>
+                <div class="sidebar">
+                  <div class="toggle">
+                    <div class="logo">
+                      <img src="./images/Logo_-_Moda_Fitness-removebg-preview.png" />
+                      <img class="sidebar-header" src="./images/Logo - Moda Fitness.png" />
+                    </div>
+                    <div class="close" id="close-btn">
+                      <span class="material-icons-sharp"> close </span>
+                    </div>
+                  </div>
+                  <a href="dashbord!!.html">
+                    <span class="material-icons-sharp"> dashboard </span>
+                    <h3>Dashboard</h3>
+                  </a>
+                  <a href="workout1.html">
+                    <span class="material-icons-sharp"> schedule </span>
+                    <h3>Plans</h3>
+                  </a>
+                  <a  href="activity.html">
+                    <span class="material-icons-sharp"> receipt_long </span>
+          
+                    <h3>Activity</h3>
+                  </a>
+                  <a href="challenges.html">
+                    <span class="material-icons-sharp"> fitness_center </span>
+                    <h3>Challenges</h3>
+                  </a>
+                  <a href="progress-tracking.html">
+                    <span class="material-icons-sharp"> insights </span>
+                    <h3>Progress</h3>
+                  </a>
+                  <a href="Recommendations.html"> 
+                    <span class="material-icons-sharp"> recommend </span> 
+                    <h3>Suggestions</h3> 
+                  </a>
+                  <a href="Fitness Tracker2.html">
+                    <span class="material-icons-sharp"> home </span>
+                    <h3>Home</h3>
+                  </a>
+                  <a href="user.html">
+                    <span class="material-icons-sharp"> account_circle </span>
+                    <h3>Profile</h3>
+                  </a>
+                  <a class="active" href="user.html">
+                    <span class="material-icons-sharp"> settings </span>
+                    <h3>Setting</h3>
+                  </a>
+                  <a href="Register.html">
+                    <span class="material-icons-sharp"> logout </span>
+                    <h3>Log out</h3>
+                  </a>
+                </div>
+              </aside>
+  
+          </div>
+
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10  ">
+     
+       
+      
+     
+     
+                <div class=" col-lg-12  ">
+                  <form action="#" class="contact-form text-center p-3">
+                  
+                    <h1 class="h1 d-flex justify-content-center text-light mt-5">Form</h1>
+        
+                  <div class="row  gx-5 mt-5">
+                   <div class="col-md-6">
+                    <input class="form-control" type="text" placeholder=" Name">
+        
+                    </div>
+         
+                    <div class="col-md-6">
+                      
+                     <input class="form-control" type="email" placeholder="Email">
+                    </div>
+         
+         
+                    <div class="col-md-6">
+                     <input class="form-control" type="text" placeholder="Last Name">
+                    </div>
+        
+                    <div class="col-md-6">
+                      <input class="form-control" type="text" placeholder="Country">
+                     </div>
+        
+                     <div class="col-md-6">
+                      <input class="form-control" type="text" placeholder="Address">
+                     </div>
+        
+                     <div class="col-md-6">
+                      <input class="form-control" type="text" placeholder="City">
+                     </div>
+         
+        
+                    
+                     
+                    <div class="col-md-12 text-center mt-3">
+                     <button class="bot btn-light">Submit </button>
+                  </div>
+         
+         
+         
+                  </div>
+                  
+         
+                  </div>
+                
+        
+        
+        
+            
+            
+            
+            
+                </main>
+            
+            
+        </div>
+    </div>
+
+
+    <script>
+      const menuBtn = document.querySelector(".menu-btn");
+      const closeBtn = document.querySelector(".close");
+      const sidebar = document.querySelector(".sidebar");
+  
+      // Function to open sidebar
+      menuBtn.addEventListener("click", () => {
+        sidebar.style.display = "block"; // Show the sidebar
+      });
+  
+      // Function to close sidebar
+      closeBtn.addEventListener("click", () => {
+        sidebar.style.display = "none"; // Hide the sidebar
+      });
+    </script>
+</body>
+</html>

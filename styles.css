@@ -1,0 +1,159 @@
+/* General Styles */
+
+  body {
+    margin: 0;
+  font-weight: 50;
+  font-style: normal;
+   background-image: url("./images/imb.png");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   align-items: center;
+   justify-content: center;
+   min-height: 100vh;
+
+}
+
+@media only screen and (min-width:760px) {
+  .table-responsive{
+    /* width: 1300px;     */
+    background-color:transparent;
+    border: 1px solid  rgba(177, 26, 121, 0.25);
+    border-radius: 10px;
+    box-shadow: 1rem 3rem 4rem rgba(177, 26, 121, 0.25);
+
+}
+}
+
+.table td, .table th {
+    vertical-align: middle;
+    border: 1px solid  rgba(177, 26, 121, 0.25);
+  text-align: center;
+   border-right-color: transparent;
+   border-left-color: transparent;
+
+}
+.table .head{
+    border: 3px solid  rgba(177, 26, 121, 0.25);
+    border-top: transparent;
+    border-right-color: transparent;
+   border-left-color: transparent;
+
+}
+.btns{
+    color: rgb(255, 253, 253);
+    font-size: 20px;
+    background-color: transparent;
+    border: transparent;
+    
+}
+
+.btns .sucess:hover{
+    color: rgb(36, 150, 7);
+}
+
+
+.btns .danger:hover{
+    color: red;
+}
+
+.h1{
+  border: 3px solid  rgba(177, 26, 121, 0.25);
+  border-radius: 30px;
+  box-shadow: 1rem 3rem 4rem rgba(177, 26, 121, 0.25);  
+  background:linear-gradient(rgba(214, 41, 151, 0.25), rgba(219, 20, 223, 0.63), rgba(166, 20, 179, 0.423));
+  margin: auto;
+  width: 200px;
+
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+ h3{
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+h2 {
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+
+.text{
+    display: flex;
+    justify-content: left;
+    margin-left: 2rem;
+
+}
+
+
+.content{
+    border: 3px solid  rgba(177, 26, 121, 0.25);
+    border-radius: 10px;
+    box-shadow: 1rem 3rem 4rem rgba(177, 26, 121, 0.25);
+    color: #efe8f0;
+    align-items: justify;
+   
+}
+  
+   .bot{
+    background: transparent;
+    color: #efe8f0;
+    border:1px solid #a528a5;
+    border-radius: 20px;
+    box-shadow: 2px 0 5px rgba(228, 171, 247, 0.53);
+   }
+  
+  
+  
+
+.add .btn{
+    width: 100px;
+    border: 3px solid  rgba(177, 26, 121, 0.25);
+    box-shadow: 1rem 3rem 4rem rgba(177, 26, 121, 0.25);  
+   border-radius: 20px;
+   color: rgb(250, 249, 251);
+   background:linear-gradient(rgba(214, 41, 151, 0.25), rgba(219, 20, 223, 0.63), rgba(166, 20, 179, 0.423));
+}
+
+.add .btn:hover{
+   color: rgb(250, 249, 251);
+   background: transparent;
+}
+
+
+
+
+@media only screen and (min-width:760px) {
+  .contact-form{
+    border: 3px solid  rgba(177, 26, 121, 0.25);
+      border-radius: 30px;
+      box-shadow: 2px 0 5px rgba(83, 5, 116, 0.725);
+      height: 99vh;
+  }
+}
+
+@media only screen and (min-width:760px) {
+  .aaa{
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    border: 1px solid rgba(125, 23, 125, 0.714);
+   
+    /* margin-left: 100px; */
+    border-top: transparent;
+    border-radius: 10px;
+  }
+}
+
+.form-group .form-control{
+  background: transparent;
+  border-radius: 20px;
+  
+}

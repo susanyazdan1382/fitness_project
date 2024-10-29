@@ -2,6 +2,7 @@
 
   body {
     margin: 0;
+    /* font-family: "Poppins", sans-serif; */
   font-weight: 50;
   font-style: normal;
    background-image: url("./images/imb.png");
@@ -11,6 +12,11 @@
    align-items: center;
    justify-content: center;
    min-height: 100vh;
+
+   /* font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal; */
+
 
 }
 
@@ -25,6 +31,9 @@
 }
 }
 
+
+
+
 .table td, .table th {
     vertical-align: middle;
     border: 1px solid  rgba(177, 26, 121, 0.25);
@@ -32,6 +41,7 @@
    border-right-color: transparent;
    border-left-color: transparent;
 
+    
 }
 .table .head{
     border: 3px solid  rgba(177, 26, 121, 0.25);
@@ -57,6 +67,8 @@
     color: red;
 }
 
+
+
 .h1{
   border: 3px solid  rgba(177, 26, 121, 0.25);
   border-radius: 30px;
@@ -64,10 +76,29 @@
   background:linear-gradient(rgba(214, 41, 151, 0.25), rgba(219, 20, 223, 0.63), rgba(166, 20, 179, 0.423));
   margin: auto;
   width: 200px;
-
+  color: white;
   font-family: "Protest Guerrilla", sans-serif;
   font-weight: 400;
   font-style: normal;
+
+  
+
+}
+
+
+.t{
+  border: 3px solid  rgba(177, 26, 121, 0.25);
+  border-radius: 30px;
+  box-shadow: 1rem 3rem 4rem rgba(177, 26, 121, 0.25);  
+  background:linear-gradient(rgba(214, 41, 151, 0.25), rgba(219, 20, 223, 0.63), rgba(166, 20, 179, 0.423));
+  margin: auto;
+  width: 200px;
+  color: white;
+  font-family: "Protest Guerrilla", sans-serif;
+  /* font-weight: 400; */
+  font-style: normal;
+
+  
 }
 
 
@@ -91,6 +122,9 @@ h2 {
     justify-content: left;
     margin-left: 2rem;
 
+   
+   
+    
 }
 
 
@@ -102,6 +136,9 @@ h2 {
     align-items: justify;
    
 }
+
+
+
   
    .bot{
     background: transparent;
@@ -140,6 +177,7 @@ h2 {
   }
 }
 
+
 @media only screen and (min-width:760px) {
   .aaa{
     color: rgb(255, 255, 255);
@@ -152,8 +190,11 @@ h2 {
   }
 }
 
+
+
 .form-group .form-control{
   background: transparent;
   border-radius: 20px;
+  /* border: 3px solid  rgb(104, 4, 113); */
   
 }

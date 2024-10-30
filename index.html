@@ -40,6 +40,17 @@
 
 
   <style>
+
+.chart-container {
+            position: relative;
+            margin: auto;
+            width: 80%; /* Adjust width as needed */
+            max-width: 600px; /* Limit max width */
+        }
+
+
+
+
      .profile-img {
             width: 40px;
             height: 40px;
@@ -278,10 +289,6 @@
             color: white;
           }
         }
-
-
-
-
       </style>
     
 </head>
@@ -364,14 +371,17 @@
 
                 <!-- chart -->
 
-                <canvas id="myChart"  style="width: 40px; height: 10px; margin-top: 110px;" ></canvas>
+                <div class="chart-container">
+                  <canvas id="myChart"></canvas>
+              </div>
+                
               
                 <div class="row mt-5">
                   
                     <div class="col-md-4">
                         <div class="card text-white p-4 mt-3">
                             <div class="card-body text-center">
-                                <h1 class="t_card">ADD USER</h1>
+                                <h1 class="t_card"> USERS</h1>
                                 <p class="card-text mt-4 text-center">Total User: <span>100</span></p>
                                
                             </div>
@@ -381,17 +391,16 @@
                         <div class="card text-white p-4 mt-3">
                             <div class="card-body text-center">
                                 <h1 class="t_card">ACTIVE USER</h1>
-                                <p class="card-text mt-4">Total active: <span>20</span></p>  
+                                <p class="card-text mt-4">Total active: <span>40</span></p>  
                             </div>
                         </div>
                     </div>
-            
                     
                     <div class="col-md-4">
                         <div class="card text-white p-4 mt-3">
                             <div class="card-body text-center">
                                 <h1 class="t_card">INACTIVE USER</h1>
-                                <p class="card-text mt-4">Total inactive: <span>40</span></p> 
+                                <p class="card-text mt-4">Total inactive: <span>20</span></p> 
                             </div>
                         </div>
                     </div>
@@ -399,21 +408,18 @@
             </div>
 
 
+         
 
+           <P class="mt-5 text-center text-light">This is our active users and inactive users and thier total number of them and in the below part of this we can add admin users and the person who is admin can access to this part and to this section w
+            e have 3 options that included to profile , name , email , phone number and 2 icons that you can edit and delete users . <br>
+            <b>Good Luck 😊</b>
 
-
-
-
-
-
+           </P>
             <br>
             <br>
             <br>
             <br>
-
-
-
-                <div class="add mb-4 mx-5 mt-5">
+                <div class="add mb-4 mx-5 ">
                 <button class="btn btn-purple" data-toggle="modal" data-target="#userModal">Add User</button>
                 </div>
 
@@ -436,7 +442,7 @@
                           </td>
                           <td>Kamran charli</td>
                           <td>kamran.charli@example.com</td>
-                          <td>0794757292</td>
+                          <td>079825492</td>
                           <td>
                               <button class="btns">
                                 <i class="bi bi-pen sucess"></i>
@@ -453,7 +459,7 @@
                         </td>
                         <td>Jims charli</td>
                         <td>Jims.charli@example.com</td>
-                        <td>0794757292</td>
+                        <td>0794467892</td>
                         <td>
                             <button class="btns">
                               <i class="bi bi-pen sucess"></i>
@@ -470,7 +476,7 @@
                       </td>
                       <td>Samim Sultan</td>
                       <td>Samim.sultan@example.com</td>
-                      <td>0794757292</td>
+                      <td>0794345692</td>
                       <td>
                           <button class="btns">
                             <i class="bi bi-pen sucess"></i>
@@ -480,6 +486,46 @@
                           </button>
                       </td>
                   </tr>
+
+
+
+
+
+                  <tr class="text-white">
+                    <td>
+                        <img src="./images/admin5.jpeg" alt="Profile" width="60px" height="60px" style="border-radius: 50%;">
+                    </td>
+                    <td>Hajera Asem</td>
+                    <td>Hajera.asem@example.com</td>
+                    <td>07357292</td>
+                    <td>
+                        <button class="btns">
+                          <i class="bi bi-pen sucess"></i>
+                        </button>
+                        <button class="btns btns-md">
+                           <i class="bi bi-x-lg danger"></i>
+                        </button>
+                    </td>
+                </tr>
+
+
+
+                <tr class="text-white">
+                  <td>
+                      <img src="./images/testimonials-1.jpg" alt="Profile" width="60px" height="60px" style="border-radius: 50%;">
+                  </td>
+                  <td>jamil Dawood</td>
+                  <td>jamil Dawood.@example.com</td>
+                  <td>0794875865</td>
+                  <td>
+                      <button class="btns">
+                        <i class="bi bi-pen sucess"></i>
+                      </button>
+                      <button class="btns btns-md">
+                         <i class="bi bi-x-lg danger"></i>
+                      </button>
+                  </td>
+              </tr>
 
                 </tbody>
                 </table>
@@ -606,72 +652,53 @@
           sidebar.style.display = "none"; // Hide the sidebar
         });
       </script>
-  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script>
-    const ctx = document.getElementById('myChart').getContext('2d');
-  const myChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-          datasets: [{
-              label: 'Monthly Sales',
-              data: [12, 10, 14, 19, 13, 9, 16],
-              backgroundColor: [
-                  'rgba(15, 99, 12, 0.2)',
+    // Sample data
+    const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'My First Dataset',
+            backgroundColor: [
+              'rgba(15, 99, 12, 0.2)',
                   'rgba(54, 2, 252, 0.2)',
                   'rgba(255, 206, 86, 0.2)',
                   'rgba(75, 192, 192, 0.2)',
                   'rgba(153, 102, 255, 0.2)',
                   'rgba(255, 159, 64, 0.2)',
                   'rgba(255, 9, 132, 0.2)'
-              ]
-              ,
-             
-              borderColor: [
-                  'rgba(25, 99, 32, 1)',
-                  'rgba(54, 16, 115, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)',
-                  'rgba(255, 19, 132, 1)'
-              ],
-              borderWidth: 1
-          }]
-      },
-      options: {
-          scales: {
-              y: {
-                  beginAtZero: true
-              }
-          }
-      }
-  });
-  
-  </script>
-
-  
+            ],
+            
+            borderColor: 'rgba(75, 192, 192, 1)',
+            data: [65, 59, 80, 81, 56, 55, 40],
+            fill: true,
+        }]
+    };
+    
+    // Configuration options
+    const config = {
+        type: 'bar', // Change to 'bar', 'pie', etc. for different chart types
+        data: data,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false, // Allow height adjustment
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        },
+    };
+    
+    // Create the chart
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+    </script> 
 </body>
 </html>
